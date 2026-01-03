@@ -1,6 +1,7 @@
 .education-heading {
   font-size: 56px;
   font-weight: 400;
+  text-align: left;
 }
 
 .education-section {
@@ -12,7 +13,7 @@
   margin-top: 2rem;
 }
 
-.education-section > * {
+.education-section>* {
   flex: 1;
   margin-bottom: 30px;
 }
@@ -20,6 +21,7 @@
 .education-card-container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   padding-top: 20px;
 }
 
@@ -27,9 +29,11 @@
   .education-card-container {
     padding-top: 0px;
   }
+
   .education-heading {
     font-size: 40px;
   }
+
   .education-text-subtitle {
     font-size: 18px;
     text-align: center;
@@ -40,10 +44,12 @@
   .education-card-container {
     padding-top: 0px;
   }
+
   .education-heading {
     font-size: 30px;
     text-align: center;
   }
+
   .education-text-subtitle {
     font-size: 16px;
   }

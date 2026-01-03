@@ -1,0 +1,16 @@
+<svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chiefGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="140" height="140" rx="24" fill="url(#chiefGradient)" />
+  <circle cx="70" cy="70" r="44" fill="none" stroke="#99f6e4" stroke-width="4" stroke-dasharray="14 10" />
+  <path d="M44 78 C52 52, 88 52, 96 78" fill="none" stroke="#f0fdfa" stroke-width="5" stroke-linecap="round" />
+  <circle cx="70" cy="52" r="9" fill="#f0fdfa" />
+  <text x="70" y="108" text-anchor="middle" font-size="16" font-family="Montserrat, Arial, sans-serif" fill="#99f6e4" letter-spacing="2">
+    CHIEF
+  </text>
+</svg>
+

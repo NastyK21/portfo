@@ -3,9 +3,11 @@
 .education-card {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 2rem;
 }
 
-.education-card:hover + .education-card-border {
+.education-card:hover+.education-card-border {
   border-color: $educationCardBorder;
   width: 100%;
   -webkit-transition: width 0.6s ease-in-out;
@@ -41,16 +43,26 @@
 }
 
 .education-roundedimg {
-  object-fit: cover;
-  margin-right: 2rem;
+  object-fit: contain;
   width: 6rem;
   height: 6rem;
   box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
   border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.education-card-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .education-card-right {
-  max-width: 70%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .education-text-subHeader {
@@ -74,7 +86,7 @@
   margin-bottom: 0.5rem;
 }
 
-.education-text-bullets > ul {
+.education-text-bullets>ul {
   margin-top: 0.5rem;
 }
 
@@ -84,51 +96,74 @@
   .education-card {
     flex-direction: column;
     padding-bottom: 10px;
+    align-items: flex-start;
   }
+
   .education-card-right {
-    max-width: 90%;
+    max-width: 100%;
   }
+
+  .education-card-left {
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+
   .education-card-border {
     width: 90%;
   }
+
   .education-text-subHeader {
     padding-top: 0.5rem;
     font-size: 16px;
   }
+
   .education-text-school {
     font-size: 20px;
-    height: 23px;
+    height: auto;
+    white-space: normal;
   }
+
   .education-text-duration {
     font-size: 16px;
   }
+
   .education-roundedimg {
-    width: 4rem;
-    height: 4rem;
-    margin-bottom: 0.5rem;
-    margin-right: 0px;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
 @media (max-width: 768px) {
   .education-card {
     text-align: center;
+    align-items: center;
   }
+
   .education-card-right {
     max-width: 100%;
   }
+
   .education-card-border {
     width: 100%;
   }
+
+  .education-card-left {
+    margin-bottom: 1rem;
+  }
+
   .education-roundedimg {
     margin-top: 10px;
-    width: 4rem;
-    height: 4rem;
-    margin-bottom: 1rem;
-    margin-right: 0;
+    width: 4.5rem;
+    height: 4.5rem;
   }
-  .education-text-bullets > ul {
-    max-width: 80%;
+
+  .education-text-school {
+    font-size: 18px;
+  }
+
+  .education-text-bullets>ul {
+    max-width: 90%;
     margin: auto;
+    text-align: left;
   }
 }

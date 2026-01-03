@@ -17,8 +17,11 @@ export default function EducationCard({school}) {
   };
   const {isDark} = useContext(StyleContext);
 
+  // Handle both string paths and require() objects
+  const logoSrc = typeof school.logo === 'string' ? school.logo : school.logo?.default || school.logo;
+
   if (!school.logo)
-    console.error(`Image of ${school.name} is missing in education section`);
+    console.error(`Image of ${school.schoolName} is missing in education section`);
   return (
     <div>
       <Fade left duration={1000}>
@@ -29,7 +32,7 @@ export default function EducationCard({school}) {
                 crossOrigin={"anonymous"}
                 ref={imgRef}
                 className="education-roundedimg"
-                src={school.logo}
+                src={logoSrc}
                 alt={school.schoolName}
               />
             </div>

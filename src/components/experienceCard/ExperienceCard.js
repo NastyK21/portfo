@@ -6,6 +6,11 @@ export default function ExperienceCard({cardInfo, isDark}) {
   const [colorArrays, setColorArrays] = useState([]);
   const imgRef = createRef();
 
+  // Handle both string paths and require() objects
+  const logoSrc = typeof cardInfo.companylogo === 'string' 
+    ? cardInfo.companylogo 
+    : cardInfo.companylogo?.default || cardInfo.companylogo;
+
   function getColorArrays() {
     const colorThief = new ColorThief();
     setColorArrays(colorThief.getColor(imgRef.current));
@@ -42,7 +47,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
           crossOrigin={"anonymous"}
           ref={imgRef}
           className="experience-roundedimg"
-          src={cardInfo.companylogo}
+          src={logoSrc}
           alt={cardInfo.company}
           onLoad={() => getColorArrays()}
         />

@@ -34,6 +34,11 @@ export default function StartupProject() {
 
           <div className="projects-container">
             {bigProjects.projects.map((project, i) => {
+              // Handle both string paths and require() objects for images
+              const imageSrc = typeof project.image === 'string' 
+                ? project.image 
+                : project.image?.default || project.image;
+              
               return (
                 <div
                   key={i}
@@ -46,7 +51,7 @@ export default function StartupProject() {
                   {project.image ? (
                     <div className="project-image">
                       <img
-                        src={project.image}
+                        src={imageSrc}
                         alt={project.projectName}
                         className="card-image"
                       ></img>
